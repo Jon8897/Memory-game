@@ -1,52 +1,76 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Milestone-project
 
-Welcome Jon8897,
+In this project as you can see is my Memory game, I want to show future users an easier and more simple
+way to get to improve there memory, This is a more creative way to improve your memory.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## UX
+For Future Users:
 
-## Gitpod Reminders
+* I would like for it to be easily used and accessible on all platforms.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* I would like to see a more casual gaming enviorment.
 
-`python3 -m http.server`
+* More features to be add such as levels and different types of categories.
 
-A blue button should appear to click: _Make Public_,
+* I would like for everyone to enjoy a more simple way of training there memory.
 
-Another blue button should appear to click: _Open Browser_.
+* I would like to also add a more competieve enviroment for people to play against each other.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Features
 
-A blue button should appear to click: _Make Public_,
+This is to make playing a game like this so easy as it requires just your phone and access to 
+internet and you can just play with out having to sign up for anything.
 
-Another blue button should appear to click: _Open Browser_.
+### Existing Features
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Game page - This allows user to be able to play and see the game on the frontend.
 
-To log into the Heroku toolbelt CLI you can use:
+* Menu options of type of game - This allows users to pick type of game mode and images theyd like to use.
 
-`heroku login -i`
+* JavaScript - This was used to make sure the game could run smoothly with no errors and bugs.
 
-If you have Multi-Factor Authentication (MFA) enabled then use the API key that was generated for you at [Heroku](https://dashboard.heroku.com/account) as your password.
-This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+### Features Left to Implement
+Another feature I would like to use is a competieve game where you can challenge each other to who has the better memory.
 
-## Updates Since The Instructional Video
+## Technologies Used
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* HTML-
+   * The basic html layout was created to make playing the game as simple as possible.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* JavaScirpt-
+   * JavaScript was used to be able to function and randomise the game at a new start.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+* CSS-
+   * CSS lay out was from different projects combined into one.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* Images-
+    * The images used were taken from wikipedia.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Memory Game:
+   1. Pop up menu shows up with option to what type of game to play.
+   2. Pop up menu also has instructions on how to play.
+   3. Match up the images to each other to secure the game.
+   4. Find all matching images to finish the game.
+   5. Once finished it give you a score and how long it to you to do it.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* further testing needed!
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## bugs/errors
+   
+   * file:///workspace/Memory-game/.vscode/settings.json
 
----
+# Credits
 
-Happy coding!
+## Content
+   
+   * The game is a very simple and straight forward game with one game mode as of now as more can be add and has been commented out,
+   In the game there is a board with 20 small boxes to match each image and also a timer.
+
+## Media
+   
+   * The photos used in this site were obtained from wikipedias upload
+# Acknowledgements
+   
+   * I have had help searching the internet to help me finish this projected off

@@ -186,13 +186,4 @@ function resetGame() {
   scoreElt.textContent = score;
 }
 
-// handle focus of the page
-// function checkPageFocus() {
-//   if (document.hasFocus()) {
-//     preElt.classList.remove("hidden");
-//   }
-//   else {
-//     preElt.classList.add("hidden");
-//   }
-// }
-// var checkPageInterval = setInterval(checkPageFocus, 300);
+
