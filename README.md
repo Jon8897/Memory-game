@@ -73,4 +73,4 @@ Another feature I would like to use is a competieve game where you can challenge
    * The photos used in this site were obtained from wikipedias upload
 # Acknowledgements
    
-   * I have had help searching the internet to help me finish this projected off
+   * I have had help searching the internet to help me finish this projected off.
