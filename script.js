@@ -2,27 +2,27 @@
 // bigger memory?
 
 var library = {
-  shapes: [
-    'https://upload.wikimedia.org/wikipedia/commons/e/e6/Lol_circle.png',
-    'https://upload.wikimedia.org/wikipedia/commons/b/b3/Black_Right_Arrow.png',
-    'https://upload.wikimedia.org/wikipedia/en/4/4e/Squircle_rounded_square.png',
-    'https://upload.wikimedia.org/wikipedia/commons/7/70/Symbolic_Love_Heart.png',
-    'https://upload.wikimedia.org/wikipedia/commons/f/fd/A_star.png',
-    'https://upload.wikimedia.org/wikipedia/en/7/73/Moonforwiki.png',
-    'https://en.wikipedia.org/wiki/Iron_Cross#/media/File:German_Cross.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/7/7f/Green_equilateral_triangle_point_up.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e7/Blue-cube.png',
-    'https://imgbin.com/png/C4rKb5Ep/cylinder-png',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e6/Lol_circle.png',
-    'https://upload.wikimedia.org/wikipedia/commons/b/b3/Black_Right_Arrow.png',
-    'https://upload.wikimedia.org/wikipedia/en/4/4e/Squircle_rounded_square.png',
-    'https://upload.wikimedia.org/wikipedia/commons/7/70/Symbolic_Love_Heart.png',
-    'https://upload.wikimedia.org/wikipedia/commons/f/fd/A_star.png',
-    'https://upload.wikimedia.org/wikipedia/en/7/73/Moonforwiki.png',
-    'https://en.wikipedia.org/wiki/Iron_Cross#/media/File:German_Cross.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/7/7f/Green_equilateral_triangle_point_up.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/e/e7/Blue-cube.png',
-    'https://imgbin.com/png/C4rKb5Ep/cylinder-png',
+  colors: [
+    'https://upload.wikimedia.org/wikipedia/commons/2/25/Red.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/3/32/Auto_Racing_Green.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/a/a8/Purple.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png',
+    'https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg',
+    'https://upload.wikimedia.org/wikipedia/en/6/6d/Orange_flag.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Grey.PNG',
+    'https://upload.wikimedia.org/wikipedia/en/f/fb/Yellow_icon.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/8/89/Color_icon_Light_Cornflower_blue.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/6/69/Dark_green.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/2/25/Red.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/3/32/Auto_Racing_Green.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/a/a8/Purple.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png',
+    'https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg',
+    'https://upload.wikimedia.org/wikipedia/en/6/6d/Orange_flag.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Grey.PNG',
+    'https://upload.wikimedia.org/wikipedia/en/f/fb/Yellow_icon.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/8/89/Color_icon_Light_Cornflower_blue.svg',
+    'https://upload.wikimedia.org/wikipedia/commons/6/69/Dark_green.svg',
   ]
   //more options to be added
 
@@ -37,7 +37,7 @@ var library = {
   emojis: [
    
  
-  colors: [
+  shapes: [
     '
     
   ],
@@ -78,8 +78,8 @@ themesElt.addEventListener("click", function(e) {
 function activateTheme(theme) {
   // insert theme in images array
   switch (theme) {
-    case "shapes":
-      for (let i=0; i<20; i++) {images.push(library.shapes[i]);}
+    case "colors":
+      for (let i=0; i<20; i++) {images.push(library.colors[i]);}
       break;
     case "numbers":
       for (let i=0; i<20; i++) {images.push(library.numbers[i]);}
@@ -90,8 +90,8 @@ function activateTheme(theme) {
     case "emojis":
       for (let i=0; i<20; i++) {images.push(library.emojis[i]);}
       break;
-    case "colors":
-      for (let i=0; i<20; i++) {images.push(library.colors[i]);}
+    case "shapes":
+      for (let i=0; i<20; i++) {images.push(library.shapes[i]);}
       break;
     case "signs":
       for (let i=0; i<20; i++) {images.push(library.signs[i]);}
