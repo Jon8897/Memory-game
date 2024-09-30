@@ -1,189 +1,97 @@
-// V1.0.0.0
+// Memory Game JavaScript - V1.0.0.1
 
-// other themes to add ?
-// bigger memory?
+let level = 1; // Initial level
+let time = 0;
+let score = 0;
+let win = 0;
+let maxGridSize = 10; // Maximum number of rows/columns
 
-var library = {
-  colors: [
-    'https://upload.wikimedia.org/wikipedia/commons/2/25/Red.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/3/32/Auto_Racing_Green.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/a/a8/Purple.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png',
-    'https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg',
-    'https://upload.wikimedia.org/wikipedia/en/6/6d/Orange_flag.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Grey.PNG',
-    'https://upload.wikimedia.org/wikipedia/en/f/fb/Yellow_icon.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/8/89/Color_icon_Light_Cornflower_blue.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/69/Dark_green.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/2/25/Red.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/3/32/Auto_Racing_Green.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/a/a8/Purple.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/68/Solid_black.png',
-    'https://upload.wikimedia.org/wikipedia/commons/7/70/Solid_white.svg',
-    'https://upload.wikimedia.org/wikipedia/en/6/6d/Orange_flag.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/5f/Grey.PNG',
-    'https://upload.wikimedia.org/wikipedia/en/f/fb/Yellow_icon.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/8/89/Color_icon_Light_Cornflower_blue.svg',
-    'https://upload.wikimedia.org/wikipedia/commons/6/69/Dark_green.svg',
-  ]
-  //more options to be added
+// DOM Elements
+const cardContainer = document.getElementById('card-container');
+const timeElt = document.getElementById('time');
+const scoreElt = document.getElementById('score');
+const levelElt = document.getElementById('level');
+const postElt = document.getElementById('post');
+const finalElt = document.getElementById('final');
+const nextLevelBtn = document.getElementById('next-level');
+const retryBtn = document.getElementById('retry');
+const exitBtn = document.getElementById('exit');
 
-  /*numbers: [
-    
-   
-  ],
-  letters: [
-    
-    
-  ],
-  emojis: [
-   
- 
-  shapes: [
-    '
-    
-  ],
-  signs: [
+// Add event listeners for post-game buttons
+nextLevelBtn.addEventListener('click', nextLevel);
+retryBtn.addEventListener('click', retryLevel);
+exitBtn.addEventListener('click', exitGame);
 
-  ]*/
-    
-    
-} 
+// Function to generate a dynamic grid based on the level
+function generateGrid(level) {
+    cardContainer.innerHTML = ''; // Clear existing cards
 
-var images = [],
-    tempElt1 = "",
-    tempElt2 = "",
-    click = -1,
-    win = 0,
-    score = 0,
-    time = 0;
+    let pairs = Math.min(Math.floor(level / 5) + 2, maxGridSize); // Number of pairs increases with level
+    let totalCards = pairs * 2; // Each pair has 2 cards
 
-var preElt = document.querySelector("#pre"),
-    themesElt = document.querySelector("#themes"),
-    boxElts = document.getElementsByClassName("box"),
-    mainElt = document.querySelector(".main"),
-    timeElt = document.querySelector("#time"),
-    scoreElt = document.querySelector("#score"),
-    postElt = document.querySelector("#post"),
-    finalElt = document.querySelector("#final"),
-    againElt = document.querySelector("#again");
+    // Calculate rows and columns based on totalCards
+    let gridSize = Math.ceil(Math.sqrt(totalCards));
+    cardContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`; // Dynamic columns
+    cardContainer.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;    // Dynamic rows
 
-
-// initiate the game with chosen theme
-themesElt.addEventListener("click", function(e) {
-  if (e.target.classList.contains("themes")) {
-    activateTheme(e.target.id);
-    preElt.classList.add("hidden");
-  }
-});
-
-function activateTheme(theme) {
-  // insert theme in images array
-  switch (theme) {
-    case "colors":
-      for (let i=0; i<20; i++) {images.push(library.colors[i]);}
-      break;
-    case "numbers":
-      for (let i=0; i<20; i++) {images.push(library.numbers[i]);}
-      break;
-    case "letters":
-      for (let i=0; i<20; i++) {images.push(library.letters[i]);}
-      break;
-    case "emojis":
-      for (let i=0; i<20; i++) {images.push(library.emojis[i]);}
-      break;
-    case "shapes":
-      for (let i=0; i<20; i++) {images.push(library.shapes[i]);}
-      break;
-    case "signs":
-      for (let i=0; i<20; i++) {images.push(library.signs[i]);}
-      break;
-  }
-  // insert images in memory game
-  for (let i=0; i<20; i++) {
-    var rand = Math.floor(Math.random() * (images.length-1));
-    boxElts[i].innerHTML = "<img src='" + images[rand] + "' alt='image' class='hidden'>";
-    images.splice(rand, 1);
-  }
-}
-
-
-// Handle the play
-mainElt.addEventListener("click", gameLogic);
-
-function gameLogic(e) {
-  // make sure the box is playable
-  if (e.target.classList.contains("play")) {
-    e.target.firstChild.classList.remove("hidden");
-    // first of two click
-    if (click < 1) {
-      tempElt1 = e.target;
-      // timer
-      if (click === -1) {
-        timer = setInterval(function() {
-          time++;
-          timeElt.innerHTML = time;
-        }, 1000);
-      }
-      click = 1;
+    // Shuffle and generate the cards for the level
+    let shuffledImages = getShuffledImages(pairs);
+    for (let i = 0; i < totalCards; i++) {
+        let card = document.createElement('div');
+        card.classList.add('box', 'play');
+        card.innerHTML = `<img src="${shuffledImages[i]}" alt="image" class="hidden">`;
+        cardContainer.appendChild(card);
     }
 
-    // second click
-    else if (e.target !== tempElt1) {
-      tempElt2 = e.target;
-
-      // different images
-      if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
-        mainElt.removeEventListener("click", gameLogic);
-        setTimeout( function() {
-          tempElt1.firstChild.classList.add("hidden");
-          tempElt2.firstChild.classList.add("hidden");
-          mainElt.addEventListener("click", gameLogic);
-        }, 400);
-        if (score > 0){
-          score -= 2;
-        }
-        scoreElt.innerHTML = score;
-      }
-
-      // same images
-      else {
-        score += 10;
-        win += 2;
-        tempElt1.firstChild.classList.add("outlined");
-        tempElt2.firstChild.classList.add("outlined");
-        tempElt1.classList.remove("play");
-        tempElt2.classList.remove("play");
-        scoreElt.innerHTML = score;
-
-        // game won
-        if (win === 20) {
-          clearTimeout(timer);
-          finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds";
-          postElt.classList.remove("hidden");
-        }
-      }
-      click = 0;
-    }
-  }
+    attachGameLogic(); // Attach game logic after grid generation
 }
 
-againElt.addEventListener("click", resetGame);
+// Function to shuffle images
+function getShuffledImages(pairs) {
+    let images = [];
+    for (let i = 0; i < pairs; i++) {
+        images.push(library.colors[i % library.colors.length]); // Use modulo to cycle images
+        images.push(library.colors[i % library.colors.length]);
+    }
+    return images.sort(() => Math.random() - 0.5); // Shuffle images
+}
 
+// Function to handle the logic after winning a level
+function levelCompleted() {
+    clearTimeout(timer); // Stop the timer
+    finalElt.innerHTML = `You won ${score} points in ${time} seconds on Level ${level}`;
+    postElt.classList.remove('hidden'); // Show post-game modal
+}
+
+// Event handler for 'Next Level' button
+function nextLevel() {
+    level++; // Increase level
+    resetGame(); // Reset the game
+    generateGrid(level); // Generate the new grid for the next level
+    postElt.classList.add('hidden'); // Hide the post-game modal
+    levelElt.textContent = `Level: ${level}`; // Update the level display
+}
+
+// Event handler for 'Retry' button
+function retryLevel() {
+    resetGame(); // Reset game state
+    generateGrid(level); // Generate grid for the same level
+    postElt.classList.add('hidden'); // Hide post-game modal
+}
+
+// Event handler for 'Exit' button
+function exitGame() {
+    window.location.reload(); // Reload the page (exit to the initial state)
+}
+
+// Reset the game state
 function resetGame() {
-  // reset game
-  tempElt1 = "";
-  tempElt2 = "";
-  click = -1;
-  win = 0;
-  score = 0;
-  time = 0;
-  postElt.classList.add("hidden");
-  preElt.classList.remove("hidden");
-  for (let i=0; i<20; i++) {
-    boxElts[i].classList.add("play");
-    boxElts[i].firstChild.classList.add("hidden");
-  }
-  timeElt.textContent = time;
-  scoreElt.textContent = score;
+    win = 0;
+    score = 0;
+    time = 0;
+    scoreElt.textContent = score;
+    timeElt.textContent = time;
 }
+
+// Initial call to generate the grid for Level 1
+generateGrid(level);
