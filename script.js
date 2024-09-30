@@ -71,6 +71,8 @@ function startGame() {
 // Function to show the pre-game modal when the page loads
 window.onload = function () {
     preElt.classList.remove('hidden'); // Show pre-game modal
+    document.querySelector('.main').classList.add('blur'); // Blur main content
+    document.querySelector('footer').classList.add('blur'); // Blur footer
 }
 
 // Event handler for 'Next Level' button
