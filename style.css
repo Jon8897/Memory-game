@@ -1,95 +1,19 @@
-/* V1.0.0.0 */
+/* Memory Game CSS - V1.0.0.1 */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    background: #1aa6bc;
-    background-image: linear-gradient(to top left, #5964b6fa, #1abc6a);
-    font-family: arial;
-    position: relative;
-    text-align: center;
-}
-
-/* Header */
-header {
-  color: white;
-  letter-spacing: 10px;
-  font-size: 22px;
-  padding: 10px 5px;
-}
-
-@media only screen and (min-width: 768px) {
-  header {
-    font-size: 28px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  header {
-    font-size: 32px;
-    padding: 10px;
-  }
-  
-  header h1 {
-    font-weight: 400;
-  }
-}
-
-/* Main Section */
-.main {
-  background: white;
-  width: 250px;
-  height: 345px;
-/*   box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.4); */
-  margin: auto;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .main {
-    width: 310px;
-    height: 285px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .main {
-    width: 410px;
-    height: 375px;
-  }
+/* Grid layout for card container */
+#card-container {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
 }
 
 .box {
   background: #6186aa;
-/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
-  background-size: 250%;
-  width: 50px;
-  height: 50px;
-  float: left;
-  margin: 10px 0 0 10px;
-}
-
-@media only screen and (min-width: 1024px) {
-  .box {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-.play:hover {
-  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -98,165 +22,37 @@ img {
   display: block;
 }
 
-/* Status Bar */
-#state {
-  background: #6186aa;
-/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
-  background-size: 250%;
-  width: 230px;
-  line-height: 25px;
-  float: left;
-  margin: 10px 0 0 10px;
-  padding: 0 10px;
-  color: white;
-  font-size: 16px;
-}
-
-@media only screen and (min-width: 768px) {
-  #state {
-    width: 290px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #state {
-    width: 390px;
-    line-height: 35px;
-  }
-}
-
-#time {
-  float: left;
-}
-
-#time::after {
-  content: " sec";
-}
-
-#score {
-  float: right;
-}
-
-#score::after {
-  content: " points";
-}
-
-/* FOOTER */
-footer p {
-  color: white;
-  padding: 5px;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-footer p a {
-  color: #ddd;
-  text-decoration: none;
-}
-
-footer p a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
 .hidden {
-  display: none !important;
+  display: none;
 }
 
-.show {
-  display: block;
-}
-
-.outlined {
-  outline: solid 2px #34495e;
-  background: #9b59b6;
-}
-
-/* Pre-Modal Window */
-#pre {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-#themes {
-  margin: auto;
-  padding: 20px;
-  width: 250px;
-  background: white;
-  color: #6186aa;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-#themes p {
-  margin-top: 10px;
-  padding: 5px 20px;
-  border: solid 1px;
-  background: white;
-  color: #6186aa;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#themes p:hover {
-  background: #6186aa;
-/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
-  background-size: 250%;
-  color: white;
-}
-
-/* Post-Modal window */
+/* Post-game modal */
 #post {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
   height: 100vh;
-  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-#post > div {
-  width: 300px;
-  padding: 20px 0 40px;
-  background: white;
-  color: #6186aa;
+#post.hidden {
+  display: none;
 }
 
-#post p:first-child, 
-#post #final {
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin: auto;
+button {
   padding: 10px 20px;
-}
-
-#post #again {
-  color: #6186aa;
-  text-decoration: none;
-  margin: auto;
-  padding: 10px 20px;
-  width: 160px;
-  border: solid 1px;
-}
-
-#post #again:hover {
-  background: #6186aa;
-/*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
-  background-size: 250%;
+  margin: 10px;
+  background-color: #28a745;
+  border: none;
   color: white;
+  font-size: 16px;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
 }
