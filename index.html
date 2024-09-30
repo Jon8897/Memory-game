@@ -1,5 +1,6 @@
-<!-- V1.0.0.0 -->
+<!-- Memory Game - V1.0.0.1 -->
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,11 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory Game</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-
 
 <body>
     <header>
@@ -20,69 +18,38 @@
         <h3>FUN AND SIMPLE WAY TO TEST YOUR MEMORY!</h3>
     </header>
 
-
+    <!-- Main Game Section -->
     <section class="main">
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
-        <div class="box play"></div>
+        <div id="card-container"></div> <!-- Dynamic card container for adaptive grid -->
 
+        <!-- Game State Display (Timer, Score, and Level) -->
         <div id="state">
-            <span id="time">0</span>
-            <span id="score">0</span>
+            <span id="time">0</span> <!-- Display game time -->
+            <span id="score">0</span> <!-- Display player's score -->
+            <span id="level">Level: 1</span> <!-- Display current level -->
         </div>
     </section>
 
-
+    <!-- Footer Section -->
     <footer>
         <p>Created by <a href="https://github.com/Jon8897/Memory-game" target="_blank">Jonathan Keefe</a></p>
     </footer>
 
-
-    <section id="pre" class="">
-        <div id="themes">
-           <h4>Chose your theme !</h4>
-           <h6>How to play: match the imagines together.</h6>
-            <p id="colors" class="themes" title="Colors">Colors</p>
-            
-        <!--For more playing options to be added-->
-            
-            <!--<p id="numbers" class="themes" title="Numbers">Numbers</p>
-            <p id="letters" class="themes" title="Letters">Letters</p>
-            <p id="emojis" class="themes" title="Emojis">Emojis</p>
-            <p id="shapes" class="themes" title="Shapes">Shapes</p>
-            <p id="signs" class="themes" title="Signs">Signs</p>-->
-        </div>
-    </section>
-
-
+    <!-- Post-game Modal Section (Hidden initially) -->
     <section id="post" class="hidden">
         <div>
-            <p>CONGRATULATIONS!</p>
-            <p id="final"></p>
+            <p>CONGRATULATIONS! You completed the level.</p>
+            <p id="final"></p> <!-- Final score and level result displayed here -->
             <br>
             <p>
-                <a id="again">Play Again !</a>
+                <button id="next-level">Next Level</button>
+                <button id="retry">Retry</button>
+                <button id="exit">Exit</button>
             </p>
         </div>
     </section>
 
+    <!-- External JavaScript -->
     <script src="script.js"></script>
 
 </body>
