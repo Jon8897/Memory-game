@@ -1,4 +1,4 @@
-// Memory Game JavaScript - V1.0.0.1
+// Memory Game JavaScript - V1.0.0.2
 
 let level = 1; // Initial level
 let time = 0;
@@ -11,6 +11,7 @@ const cardContainer = document.getElementById('card-container');
 const timeElt = document.getElementById('time');
 const scoreElt = document.getElementById('score');
 const levelElt = document.getElementById('level');
+const preElt = document.getElementById('pre'); // Pre-game modal
 const postElt = document.getElementById('post');
 const finalElt = document.getElementById('final');
 const nextLevelBtn = document.getElementById('next-level');
@@ -56,11 +57,16 @@ function getShuffledImages(pairs) {
     return images.sort(() => Math.random() - 0.5); // Shuffle images
 }
 
-// Function to handle the logic after winning a level
-function levelCompleted() {
-    clearTimeout(timer); // Stop the timer
-    finalElt.innerHTML = `You won ${score} points in ${time} seconds on Level ${level}`;
-    postElt.classList.remove('hidden'); // Show post-game modal
+// Function to start the game
+function startGame() {
+    preElt.classList.add('hidden'); // Hide the pre-game modal
+    generateGrid(level); // Generate grid for level 1
+    levelElt.textContent = `Level: ${level}`; // Show level 1
+}
+
+// Function to show the pre-game modal when the page loads
+window.onload = function () {
+    preElt.classList.remove('hidden'); // Show pre-game modal
 }
 
 // Event handler for 'Next Level' button
@@ -92,6 +98,3 @@ function resetGame() {
     scoreElt.textContent = score;
     timeElt.textContent = time;
 }
-
-// Initial call to generate the grid for Level 1
-generateGrid(level);
