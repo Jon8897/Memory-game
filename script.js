@@ -1,4 +1,5 @@
 // Memory Game JavaScript - V1.0.0.2
+// V1.0.0.2 - Adding game logic, dynamic grid generation, and modal handling in JavaScript
 
 let level = 1; // Initial level
 let time = 0;
@@ -59,9 +60,12 @@ function getShuffledImages(pairs) {
 
 // Function to start the game
 function startGame() {
+    console.log("Game started"); // Debugging line
     preElt.classList.add('hidden'); // Hide the pre-game modal
+    document.querySelector('.main').classList.remove('blur'); // Remove blur from main content
+    document.querySelector('footer').classList.remove('blur'); // Remove blur from footer
     generateGrid(level); // Generate grid for level 1
-    levelElt.textContent = `Level: ${level}`; // Show level 1
+    levelElt.textContent = `Level: ${level}`; // Show current level
 }
 
 // Function to show the pre-game modal when the page loads
