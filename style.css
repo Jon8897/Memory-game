@@ -257,3 +257,8 @@ footer p a:hover {
 .hidden .main, .hidden footer {
   filter: none;
 }
+
+/* Additional CSS to support blur effect */
+.blur {
+  filter: blur(4px);
+}
