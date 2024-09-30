@@ -1,58 +1,247 @@
 /* Memory Game CSS - V1.0.0.1 */
 
-/* Grid layout for card container */
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background: #1aa6bc;
+  background-image: linear-gradient(to top left, #5964b6fa, #1abc6a);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Header Styling */
+header {
+  color: white;
+  letter-spacing: 10px;
+  font-size: 22px;
+  padding: 10px 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header {
+    font-size: 32px;
+    padding: 10px;
+  }
+  
+  header h1 {
+    font-weight: 400;
+  }
+}
+
+/* Main Section */
+.main {
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 20px;
+}
+
+/* Dynamic Grid for Cards */
 #card-container {
   display: grid;
   gap: 10px;
+  justify-content: center;
+  align-content: center;
   padding: 10px;
 }
 
 .box {
   background: #6186aa;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  aspect-ratio: 1; /* Ensures square-like shape for cards */
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive box size */
+@media only screen and (min-width: 1024px) {
+  .box {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* For hiding images initially */
+img.hidden {
+  display: none;
 }
 
 img {
   width: 100%;
-  display: block;
+  height: 100%;
 }
 
-.hidden {
-  display: none;
+/* Status Bar */
+#state {
+  background: #6186aa;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Post-game modal */
+#time::after {
+  content: " sec";
+}
+
+#score::after {
+  content: " points";
+}
+
+/* Post-Modal window */
 #post {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #post.hidden {
   display: none;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  background-color: #28a745;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+#post > div {
+  width: 300px;
+  padding: 20px 0 40px;
+  background: white;
+  color: #6186aa;
+  text-align: center;
 }
 
-button:hover {
-  background-color: #218838;
+#post p:first-child,
+#post #final {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+#post #again,
+#post button {
+  color: #6186aa;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: 160px;
+  border: solid 1px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#post #again:hover,
+#post button:hover {
+  background-color: #6186aa;
+  color: white;
+}
+
+/* Footer */
+footer p {
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+footer p a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+footer p a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Outlined Matched Cards */
+.outlined {
+  outline: solid 2px #34495e;
+  background: #9b59b6;
+}
+
+/* Pre-Modal Window */
+#pre {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#themes {
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+  background: white;
+  color: #6186aa;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+#themes p {
+  margin-top: 10px;
+  padding: 5px 20px;
+  border: solid 1px;
+  background: white;
+  color: #6186aa;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#themes p:hover {
+  background: #6186aa;
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
 }
