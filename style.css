@@ -1,4 +1,4 @@
-/* Memory Game CSS - V1.0.0.1 */
+/* Memory Game CSS - V1.0.0.2 */
 
 /* General Resets */
 * {
@@ -198,50 +198,61 @@ footer p a:hover {
   background: #9b59b6;
 }
 
-/* Pre-Modal Window */
+/* Pre-Game Modal Window Styling */
 #pre {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  z-index: 999; /* Ensure it’s always on top */
 }
 
 #themes {
-  margin: auto;
-  padding: 20px;
-  width: 250px;
+  padding: 30px 40px;
   background: white;
-  color: #6186aa;
-  font-size: 20px;
-  letter-spacing: 1px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Nice shadow for 3D effect */
+  text-align: center;
 }
 
-#themes p {
-  margin-top: 10px;
-  padding: 5px 20px;
-  border: solid 1px;
-  background: white;
-  color: #6186aa;
-  cursor: pointer;
+#themes h4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#themes h6 {
   font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
 }
 
-#themes p:hover {
-  background: #6186aa;
+#themes button {
+  padding: 10px 20px;
+  background-color: #28a745; /* Green for the start button */
   color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.hidden {
-  display: none !important;
+#themes button:hover {
+  background-color: #218838; /* Darker green on hover */
 }
 
-.show {
-  display: block;
+/* Disable everything else while the modal is active */
+.main, footer {
+  filter: blur(4px); /* Adds a blur effect to the background when the modal is active */
+}
+
+/* Remove the blur filter once the modal is hidden */
+.hidden .main, .hidden footer {
+  filter: none;
 }
