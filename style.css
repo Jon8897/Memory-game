@@ -1,3 +1,5 @@
+/* V1.0.0.0 */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,7 @@ display: flex;
     text-align: center;
 }
 
-/* HEADER */
+/* Header */
 header {
   color: white;
   letter-spacing: 10px;
@@ -42,7 +44,7 @@ header {
   }
 }
 
-/* main SECTION */
+/* Main Section */
 .main {
   background: white;
   width: 250px;
@@ -96,7 +98,7 @@ img {
   display: block;
 }
 
-/* STATUS bar */
+/* Status Bar */
 #state {
   background: #6186aa;
 /*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
@@ -170,7 +172,7 @@ footer p a:hover {
   background: #9b59b6;
 }
 
-/* PRE modal window */
+/* Pre-Modal Window */
 #pre {
   position: absolute;
   top: 0;
@@ -212,7 +214,7 @@ footer p a:hover {
   color: white;
 }
 
-/* POST modal window */
+/* Post-Modal window */
 #post {
   position: fixed;
   top: 0;

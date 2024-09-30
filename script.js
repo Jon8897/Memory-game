@@ -1,3 +1,5 @@
+// V1.0.0.0
+
 // other themes to add ?
 // bigger memory?
 
@@ -185,5 +187,3 @@ function resetGame() {
   timeElt.textContent = time;
   scoreElt.textContent = score;
 }
-
-
