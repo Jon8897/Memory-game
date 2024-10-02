@@ -1,6 +1,4 @@
-<!-- Memory Game - V1.0.0.2 -->
-<!-- V1.0.0.2 - Adding the game structure and modal support in HTML -->
-
+<!-- Memory Game - V1.0.0.3 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,42 +12,80 @@
 </head>
 
 <body>
+
+    <!-- Header Section -->
     <header>
         <h1>Test Your Memory</h1>
         <h3>FUN AND SIMPLE WAY TO TEST YOUR MEMORY!</h3>
     </header>
 
-    <!-- Main Game Section -->
-    <section class="main blur"> <!-- Added the blur class here -->
-        <div id="card-container"></div> <!-- Dynamic card container for adaptive grid -->
-
-        <!-- Game State Display (Timer, Score, and Level) -->
-        <div id="state">
-            <span id="time">0</span> <!-- Display game time -->
-            <span id="score">0</span> <!-- Display player's score -->
-            <span id="level">Level: 1</span> <!-- Display current level -->
+    <!-- Login Section -->
+    <section id="login-section" class="">
+        <div id="login-form">
+            <h4>Login to Start</h4>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            <button id="login-btn" onclick="login()">Login</button>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="blur"> <!-- Added the blur class here -->
+    <!-- Main Game Section (Blurred until login) -->
+    <section class="main blur">
+        <div id="card-container"></div> <!-- Dynamic card container for adaptive grid -->
+
+        <!-- Game State Display -->
+        <div id="state">
+            <span id="time">0 sec</span>
+            <span id="moves">Moves: 0</span>
+            <span id="score">Score: 0</span>
+            <span id="level">Level: 1</span>
+        </div>
+
+        <!-- Pause Button -->
+        <button id="pause-game">Pause</button> 
+    </section>
+
+    <!-- Footer Section (Blurred until login) -->
+    <footer class="blur">
         <p>Created by <a href="https://github.com/Jon8897/Memory-game" target="_blank">Jonathan Keefe</a></p>
     </footer>
 
     <!-- Pre-game Modal Section -->
-    <section id="pre" class="">
+    <section id="pre" class="hidden">
         <div id="themes">
            <h4>Start Your Game!</h4>
-           <h6>How to play: Match the images together.</h6>
-           <button id="start-game" onclick="startGame()">Start Game</button> <!-- Start Game button -->
+           <h6>Match the images to win</h6>
+
+           <!-- Game Mode Selection -->
+           <label for="game-mode">Choose Mode:</label>
+           <select id="game-mode">
+               <option value="solo">Solo</option>
+               <option value="multiplayer">Multiplayer</option>
+           </select>
+
+           <!-- Level Select Option -->
+           <label for="level-select">Choose Level:</label>
+           <select id="level-select">
+               <option value="1">Level 1</option>
+               <!-- Dynamically generate unlocked levels here -->
+           </select>
+
+           <!-- Multiplayer Invite (hidden by default, shown when Multiplayer is selected) -->
+           <div id="multiplayer-invite" class="hidden">
+               <label for="friend-link">Invite Friend:</label>
+               <input type="text" id="friend-link" readonly value="Invite link here">
+               <button id="copy-link">Copy Link</button>
+           </div>
+
+           <button id="start-game" onclick="startGame()">Start Game</button> 
         </div>
     </section>
 
-    <!-- Post-game Modal Section (Hidden initially) -->
+    <!-- Post-game Modal Section -->
     <section id="post" class="hidden">
         <div>
             <p>CONGRATULATIONS! You completed the level.</p>
-            <p id="final"></p> <!-- Final score and level result displayed here -->
+            <p id="final"></p>
             <br>
             <p>
                 <button id="next-level">Next Level</button>
@@ -59,9 +95,26 @@
         </div>
     </section>
 
+    <!-- Multiplayer Result Section -->
+    <section id="multiplayer" class="hidden">
+        <div>
+            <h4>Multiplayer Mode</h4>
+            <p>Waiting for your opponent to finish...</p>
+            <p id="multiplayer-status"></p> 
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="hidden">
+        <h4>Global Leaderboard</h4>
+        <ul id="leaderboard-list">
+            <!-- Dynamic list of top players -->
+        </ul>
+        <button id="close-leaderboard">Close</button>
+    </section>
+
     <!-- External JavaScript -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
