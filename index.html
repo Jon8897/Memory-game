@@ -1,4 +1,4 @@
-<!-- Memory Game - V1.0.0.4 -->
+<!-- Memory Game - V1.0.0.5 -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +19,7 @@
         <h3>FUN AND SIMPLE WAY TO TEST YOUR MEMORY!</h3>
     </header>
 
-    <!-- Login Section -->
+    <!-- Login Section (Displays by default) -->
     <section id="login-section" class="">
         <div id="login-form">
             <h4>Login to Start</h4>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Main Game Section (Blurred until login) -->
-    <section class="main blur">
+    <section class="main blur hidden" id="main-game-section">
         <div id="card-container"></div> <!-- Dynamic card container for adaptive grid -->
 
         <!-- Game State Display -->
@@ -58,19 +58,21 @@
     </section>
 
     <!-- Footer Section (Blurred until login) -->
-    <footer class="blur">
+    <footer class="blur hidden" id="footer-section">
         <p>Created by <a href="https://github.com/Jon8897/Memory-game" target="_blank">Jonathan Keefe</a></p>
     </footer>
 
     <!-- Initial Page with 3 buttons (after login or guest access) -->
     <section id="initial-page" class="hidden">
-        <button id="single-player-btn" onclick="openSinglePlayer()">Single Player</button>
-        <button id="multiplayer-btn" onclick="openMultiplayer()">Multiplayer</button>
-        <button id="leaderboard-btn" onclick="openLeaderboard()">Leaderboard</button>
+        <div class="modal-container">
+            <button id="single-player-btn" class="modal-btn" onclick="openSinglePlayer()">Single Player</button>
+            <button id="multiplayer-btn" class="modal-btn" onclick="openMultiplayer()">Multiplayer</button>
+            <button id="leaderboard-btn" class="modal-btn" onclick="openLeaderboard()">Leaderboard</button>
+        </div>
     </section>
 
     <!-- Single Player Level Selection Modal (hidden initially) -->
-    <section id="single-player-modal" class="hidden">
+    <section id="single-player-modal" class="modal hidden">
         <div id="single-player-options">
             <h4>Select Your Level</h4>
             <label for="level-select">Choose Level:</label>
@@ -83,18 +85,18 @@
     </section>
 
     <!-- Multiplayer Invite Modal (hidden initially) -->
-    <section id="multiplayer-modal" class="hidden">
+    <section id="multiplayer-modal" class="modal hidden">
         <div id="multiplayer-options">
             <h4>Multiplayer Mode</h4>
             <label for="friend-link">Invite Friend:</label>
             <input type="text" id="friend-link" readonly value="Invite link here">
             <button id="copy-link" onclick="copyInviteLink()">Copy Link</button>
-            <button id="start-multiplayer-game">Start Game</button>
+            <button id="start-multiplayer-game" onclick="startMultiplayerGame()">Start Game</button>
         </div>
     </section>
 
     <!-- Leaderboard Modal (hidden initially) -->
-    <section id="leaderboard-modal" class="hidden">
+    <section id="leaderboard-modal" class="modal hidden">
         <h4>Global Leaderboard</h4>
         <ul id="leaderboard-list">
             <!-- Dynamically add top players here -->
