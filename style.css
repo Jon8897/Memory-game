@@ -1,4 +1,4 @@
-/* Memory Game CSS - V1.0.0.6 */
+/* Memory Game CSS - V1.0.0.7 */
 
 /* General Resets */
 * {
@@ -23,19 +23,19 @@ body {
 header {
   color: white;
   letter-spacing: 10px;
-  font-size: 22px;
-  padding: 10px 5px;
+  font-size: 32px; /* Increased the header font size */
+  padding: 20px 5px; /* Added more padding */
 }
 
 @media only screen and (min-width: 768px) {
   header {
-    font-size: 28px;
+    font-size: 40px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   header {
-    font-size: 32px;
+    font-size: 48px;
     padding: 10px;
   }
   
@@ -44,34 +44,33 @@ header {
   }
 }
 
-/* Center the Main Section */
-.center-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.modal-container {
+/* Main Button Section */
+#initial-page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 60vh; /* Ensure buttons are centered vertically */
+  margin-top: 50px; /* Adjust the space */
 }
 
-/* Button Sections */
 #single-player-btn, #multiplayer-btn, #leaderboard-btn {
   background-color: #28a745;
   color: white;
-  padding: 15px;
+  padding: 20px 40px; /* Increase the padding for larger buttons */
   border: none;
-  margin: 10px;
-  width: 80%;
-  max-width: 300px;
+  margin: 20px; /* Added more margin between the buttons */
+  width: 250px; /* Increased width */
+  max-width: 100%;
   cursor: pointer;
+  font-size: 24px; /* Increased button font size */
+  border-radius: 10px; /* Added rounded corners */
+  transition: all 0.3s ease;
 }
 
 #single-player-btn:hover, #multiplayer-btn:hover, #leaderboard-btn:hover {
   background-color: #218838;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a hover shadow effect */
 }
 
 /* Modal Styles */
@@ -87,31 +86,40 @@ header {
   text-align: center;
   z-index: 999;
   display: none; /* Hidden until triggered */
+  max-width: 90%;
+  width: 400px; /* Added width for better visibility */
 }
 
-/* Add specific styles for buttons and labels */
 #single-player-options, #multiplayer-options {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Button and Input Styling */
 button {
-  margin-top: 10px;
-  padding: 10px 20px;
+  margin-top: 15px; /* Added more spacing for buttons */
+  padding: 15px 30px; /* Increase padding for larger hit area */
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 button:hover {
   background-color: #218838;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Added hover effect */
 }
 
 input {
-  padding: 10px;
-  margin-top: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px;
+  font-size: 16px; /* Increased input font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 /* Social Login Buttons */
@@ -119,10 +127,12 @@ input {
   background-color: #28a745;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
+  font-size: 16px;
+  width: 200px;
 }
 
 .social-login:hover {
@@ -132,4 +142,20 @@ input {
 /* Hidden class for display management */
 .hidden {
   display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 600px) {
+  #single-player-btn, #multiplayer-btn, #leaderboard-btn {
+    width: 80%;
+    padding: 15px 30px; /* Adjust padding for smaller screens */
+  }
+
+  button {
+    font-size: 16px; /* Smaller button font on mobile */
+  }
+
+  input {
+    font-size: 14px;
+  }
 }
