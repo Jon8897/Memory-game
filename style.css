@@ -1,5 +1,4 @@
-/* Memory Game CSS - V1.0.0.5 */
-/* V1.0.0.5 - Added layout fixes for buttons, modal visibility, and section transitions */
+/* Memory Game CSS - V1.0.0.6 */
 
 /* General Resets */
 * {
@@ -45,80 +44,21 @@ header {
   }
 }
 
-/* Login Section */
-#login-section {
+/* Center the Main Section */
+.center-section {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
 }
 
-#login-form {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  width: 90%;
-  max-width: 500px;
-}
-
-#login-form button {
-  margin: 10px;
-}
-
-#login-form input {
-  padding: 10px;
-  margin: 10px;
-  width: 80%;
-}
-
-.social-login {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.social-login:hover {
-  background-color: #218838;
-}
-
-/* Main Section (Game Grid) */
-.main {
-  background: white;
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* Dynamic Grid for Cards */
-#card-container {
-  display: none;  /* Hidden until the game starts */
-  gap: 10px;
-  justify-content: center;
-  align-content: center;
-  padding: 10px;
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Button Sections */
-.hidden {
-  display: none;
-}
-
-#initial-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
 #single-player-btn, #multiplayer-btn, #leaderboard-btn {
   background-color: #28a745;
   color: white;
@@ -172,4 +112,24 @@ button:hover {
 input {
   padding: 10px;
   margin-top: 10px;
+}
+
+/* Social Login Buttons */
+.social-login {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.social-login:hover {
+  background-color: #218838;
+}
+
+/* Hidden class for display management */
+.hidden {
+  display: none;
 }
