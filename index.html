@@ -22,9 +22,9 @@
     <!-- Main Section with 3 Buttons (Single Player, Multiplayer, Leaderboard) -->
     <section id="initial-page" class="center-section">
         <div class="modal-container">
-            <button id="single-player-btn" class="modal-btn" onclick="openSinglePlayer()">Single Player</button>
-            <button id="multiplayer-btn" class="modal-btn" onclick="openMultiplayer()">Multiplayer</button>
-            <button id="leaderboard-btn" class="modal-btn" onclick="openLeaderboard()">Leaderboard</button>
+            <button id="single-player-btn" class="modal-btn">Single Player</button>
+            <button id="multiplayer-btn" class="modal-btn">Multiplayer</button>
+            <button id="leaderboard-btn" class="modal-btn">Leaderboard</button>
         </div>
     </section>
 
@@ -37,7 +37,7 @@
                 <option value="1">Level 1</option>
                 <!-- Dynamically generate more levels here -->
             </select>
-            <button id="start-level" onclick="startSinglePlayerGame()">Start Game</button>
+            <button id="start-level">Start Game</button>
         </div>
     </section>
 
@@ -48,10 +48,10 @@
             <p>Select how you'd like to log in:</p>
 
             <!-- Social Login Buttons -->
-            <button id="facebook-login" class="social-login" onclick="socialLogin('facebook')">Login with Facebook</button>
-            <button id="google-login" class="social-login" onclick="socialLogin('google')">Login with Google</button>
-            <button id="apple-login" class="social-login" onclick="socialLogin('apple')">Login with Apple</button>
-            <button id="playstore-login" class="social-login" onclick="socialLogin('playstore')">Login with Play Store</button>
+            <button id="facebook-login" class="social-login">Login with Facebook</button>
+            <button id="google-login" class="social-login">Login with Google</button>
+            <button id="apple-login" class="social-login">Login with Apple</button>
+            <button id="playstore-login" class="social-login">Login with Play Store</button>
 
             <hr>
 
@@ -59,14 +59,14 @@
             <h5>Or Play as a Guest</h5>
             <label for="username">Enter Your Name</label>
             <input type="text" id="username" placeholder="Enter your name">
-            <button id="guest-login" onclick="startAsGuest()">Play as Guest</button>
+            <button id="guest-login">Play as Guest</button>
 
             <!-- Multiplayer Invite -->
             <div id="multiplayer-invite">
                 <label for="friend-link">Invite Friend:</label>
                 <input type="text" id="friend-link" readonly value="Invite link here">
-                <button id="copy-link" onclick="copyInviteLink()">Copy Link</button>
-                <button id="start-multiplayer-game" onclick="startMultiplayerGame()">Start Game</button>
+                <button id="copy-link">Copy Link</button>
+                <button id="start-multiplayer-game">Start Game</button>
             </div>
         </div>
     </section>
@@ -77,7 +77,7 @@
         <ul id="leaderboard-list">
             <!-- Dynamically add top players here -->
         </ul>
-        <button id="close-leaderboard" onclick="closeLeaderboard()">Close</button>
+        <button id="close-leaderboard">Close</button>
     </section>
 
     <!-- Main Game Section (Hidden until Single Player or Multiplayer starts) -->
@@ -93,7 +93,7 @@
         </div>
 
         <!-- Pause Button -->
-        <button id="pause-game">Pause</button> 
+        <button id="pause-game">Pause</button>
     </section>
 
     <!-- Footer Section (Visible once game starts) -->
