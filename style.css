@@ -7,14 +7,25 @@
   box-sizing: border-box;
 }
 
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background: #1aa6bc;
-  background-image: linear-gradient(to top left, #5964b6fa, #1abc6a);
   font-family: Arial, sans-serif;
   text-align: center;
 }
@@ -23,8 +34,8 @@ body {
 header {
   color: white;
   letter-spacing: 10px;
-  font-size: 32px; /* Increased the header font size */
-  padding: 20px 5px; /* Added more padding */
+  font-size: 32px;
+  padding: 20px 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -50,27 +61,27 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vh; /* Ensure buttons are centered vertically */
-  margin-top: 50px; /* Adjust the space */
+  height: 60vh; /* Center vertically */
+  margin-top: 30px; /* Close the buttons to title */
 }
 
 #single-player-btn, #multiplayer-btn, #leaderboard-btn {
   background-color: #28a745;
   color: white;
-  padding: 20px 40px; /* Increase the padding for larger buttons */
+  padding: 20px 40px;
   border: none;
-  margin: 20px; /* Added more margin between the buttons */
-  width: 250px; /* Increased width */
+  margin: 10px;
+  width: 250px;
   max-width: 100%;
   cursor: pointer;
-  font-size: 24px; /* Increased button font size */
-  border-radius: 10px; /* Added rounded corners */
+  font-size: 24px;
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 #single-player-btn:hover, #multiplayer-btn:hover, #leaderboard-btn:hover {
   background-color: #218838;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a hover shadow effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal Styles */
@@ -85,9 +96,9 @@ header {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   text-align: center;
   z-index: 999;
-  display: none; /* Hidden until triggered */
+  display: none;
   max-width: 90%;
-  width: 400px; /* Added width for better visibility */
+  width: 400px;
 }
 
 #single-player-options, #multiplayer-options {
@@ -96,10 +107,9 @@ header {
   align-items: center;
 }
 
-/* Button and Input Styling */
 button {
-  margin-top: 15px; /* Added more spacing for buttons */
-  padding: 15px 30px; /* Increase padding for larger hit area */
+  margin-top: 15px;
+  padding: 15px 30px;
   background-color: #28a745;
   color: white;
   border: none;
@@ -109,7 +119,7 @@ button {
 
 button:hover {
   background-color: #218838;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Added hover effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 input {
@@ -117,7 +127,7 @@ input {
   margin-top: 15px;
   width: 100%;
   max-width: 350px;
-  font-size: 16px; /* Increased input font size */
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -148,11 +158,11 @@ input {
 @media only screen and (max-width: 600px) {
   #single-player-btn, #multiplayer-btn, #leaderboard-btn {
     width: 80%;
-    padding: 15px 30px; /* Adjust padding for smaller screens */
+    padding: 15px 30px;
   }
 
   button {
-    font-size: 16px; /* Smaller button font on mobile */
+    font-size: 16px;
   }
 
   input {
