@@ -1,4 +1,4 @@
-// Memory Game JavaScript - V1.0.0.4
+// Memory Game JavaScript - V1.0.0.5
 
 let level = 1; // Initial level
 let time = 0;
@@ -303,4 +303,15 @@ function nextLevel() {
 // Global error handler for uncaught errors
 window.onerror = function (message, source, lineno, colno, error) {
     console.error(`Global Error: ${message} at ${source}:${lineno}:${colno}`, error);
+};
+
+// Ensure the DOM is fully loaded before attaching event listeners
+window.onload = function() {
+    // Attach event listeners to buttons
+    document.getElementById('single-player-btn').addEventListener('click', openSinglePlayer);
+    document.getElementById('multiplayer-btn').addEventListener('click', openMultiplayer);
+    document.getElementById('leaderboard-btn').addEventListener('click', openLeaderboard);
+    document.getElementById('close-leaderboard').addEventListener('click', closeLeaderboard);
+
+    console.log("Event listeners added and DOM is ready.");
 };
