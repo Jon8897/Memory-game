@@ -1,5 +1,4 @@
 // Memory Game JavaScript - V1.0.0.3
-// V1.0.0.3 - Added section transitions between login, game mode selection, and game start
 
 let level = 1; // Initial level
 let time = 0;
