@@ -4,18 +4,18 @@ This project is a Memory Game designed to help users improve their memory in a f
 
 ## Table of Contents
 
-1. [UX (User Experience)](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-2. [Features](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-    - [Existing Features](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-    - [Planned Features](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-3. [Technologies Used](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-4. [Testing](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-5. [Bugs and Issues](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-6. [Future Enhancements](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-7. [Credits](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-    - [Media](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-    - [Acknowledgements](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
-8. [License](https://www.notion.so/Learning-67110c3bede5480fa9c0ac8292686399?pvs=21)
+1. [UX (User Experience)](#UX)
+2. [Features](#Features)
+    - [Existing Features](#Existing-Features)
+    - [Planned Features](#Planned-Features)
+3. [Technologies Used](#Technologies-Used)
+4. [Testing](#Testing)
+5. [Bugs and Issues](#Bugs-and-Issues)
+6. [Future Enhancements](#Future-Enhancements)
+7. [Credits](#Credits)
+    - [Media](#Media)
+    - [Acknowledgements](#Acknowledgements)
+8. [License](#License)
 
 ## UX
 
